@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="author" content="Chioma Igwe">
+        <meta name="keyword" content="HTML 5, CSS 3, JavaScript, Tables and forms">
+        <meta name="description" content="page holding assignment on HTML Layout & Grid-view  Webpage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CDC Forms</title>
+        <link rel="stylesheet" type="text/css" href="../../css/style.css"/>
+    </head>
+    <body>
+        <header class="header">
+            <h1>Client Personal Information Form Page</h1>
+            <div class="menu-icon">&#9775</div>
+            <!-- top navigations -->
+            <nav class="navbar">
+                <ul>
+                    <li style="float:left"><a href="../registration.html">Register New Client</a></li>
+                    <li><a href="../../index.html">Logout</a></li>
+                    <li><a href="../../index.html">Home</a></li>
+                </ul>
+            </nav>
+        </header>
+        <section class="row">
+            <div class="col-3">
+              <div class="sidenav ">
+                <ul>
+                <li><a href="./personal_info_form.html" class="sidenav-focus"> Personal Information Form</a></li>
+                <li><a href="./risk_factor_form.html">Risk Factor Form</a></li>
+                <li><a href="./hepatitis_b_form.html">Hepatitis_B_Case_Report_Form</a></li>
+                <li><a href="./congenital_syphilis_form.html">Congenital Syphilis Form</a></li>
+                <li><a href="./chlamydia_gonorrhea_form.html">Chlamydia & Gonorrhea Case Reort Form</a></li>
+                <li><a href="CDC Confirmation.html">Confirmation Page</a></li>
+                </ul>
+              </div>
+            </div>
+            
+            <div class="col-9">
+                <article>
+                    <div class="form-container">
+                        <h2>Personal Information</h2>
+                        <form action="#" method="post" autocomplete="off" id="registration-form">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" id="name" name="name" class="form-input">
+                            </div>
+                            <div class="form-group">
+                                <label for="identifier">Unique Identifier:</label>
+                                <input type="text" id="identifier" name="identifier" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sex">Sex:</label>
+                                <select id="sex" name="sex" class="form-input" required>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="gender-identity">Gender Identity:</label>
+                                <input type="text" id="gender-identity" name="gender-identity" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="sexual-orientation">Sexual Orientation:</label>
+                                <input type="text" id="sexual-orientation" name="sexual-orientation" class="form-input" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="year-of-birth">Year of Birth:</label>
+                                <input type="number" id="year-of-birth" name="year-of-birth" class="form-input" required>
+                            </div>
+                            <input type="submit" name="submit" value="Submit" class="login-button">
+                            <div class="form-group">
+                                <p>Select a form from the side navigation to proceed.</p>
+                            </div>
+                        </form>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <div class="footer">
+            <footer>&copy CDC Forms. All Rights Reserved.</footer>
+        </div>
+
+    </body>
+</html>
