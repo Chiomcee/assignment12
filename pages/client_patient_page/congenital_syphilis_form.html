@@ -48,10 +48,10 @@
                                 <input type="date" id="report-date" name="report-date"><label><input type="checkbox" name="report-unk"> Unk</label></td>
           
                                 <td colspan="3">2. Reporting state FIPS code:<br/>
-                                <input type="text" name="state-fips" placeholder="Reporting State"><label><input type="checkbox" id="state-fips-unk" name="state-fips-unk"> Unk</label>
+                                <input type="text" id="state-fips" name="state-fips" placeholder="Reporting State"><label><input type="checkbox" id="state-fips-unk" name="state-fips-unk"> Unk</label>
                                 </td>
                                 <td colspan="4">3. Reporting county FIPS code:<br>
-                                <input type="text" name="county-fips" placeholder="Reporting Country Name"> <label><input type="checkbox" id="country-fips-unk" name="county-fips-unk"> Unk</label></td>
+                                <input type="text" id="county-fips" name="county-fips" placeholder="Reporting Country Name"> <label><input type="checkbox" id="country-fips-unk" name="county-fips-unk"> Unk</label></td>
                                 
                             </tr>
                             <tr>
@@ -161,29 +161,29 @@
                               <td colspan="4">
                                   <label><input type="radio" id="syphilis-stage-primary" name="syphilis-stage[]" value="primary"> 1 primary</label>
                                   <label><input type="radio" id="syphilis-stage-secondary" name="syphilis-stage[]" value="secondary"> 2 secondary</label>
-                                  <label><input type="radio" name="syphilis-stage[]" value="early-latent"> 3 early latent</label>
-                                  <label><input type="radio" name="syphilis-stage[]" value="late-latent"> 4 late or late latent</label>
-                                  <label><input type="radio" name="syphilis-stage[]" value="unknown">  Unk</label>
+                                  <label><input type="radio" id="syphilis-stage-early-latent" name="syphilis-stage[]" value="early-latent"> 3 early latent</label>
+                                  <label><input type="radio" id="syphilis-stage-late-latent" name="syphilis-stage[]" value="late-latent"> 4 late or late latent</label>
+                                  <label><input type="radio" id="syphilis-stage-unk" name="syphilis-stage[]" value="unknown">  Unk</label>
                               </td>
                              
                           </tr>
                           <tr>
                               
                               <td>b.</td>
-                              <td><input type="date" name="first-test-date"> <label><input type="checkbox" name="first-test-unk"> Unk</label></td>
-                              <td><label><input type="radio" name="first-test-result" value="reactive"> Reactive</label></td>
-                              <td><label><input type="radio" name="first-test-result" value="non-reactive"> Nonreactive</label></td>
-                              <td colspan="2"><input type="text" name="first-test-titer"></td>
+                              <td><input type="date" id="first-test-date" name="first-test-date"> <label><input type="checkbox" id="first-date-unk" name="first-test-unk"> Unk</label></td>
+                              <td><label><input type="radio"id="first-test-result-reactive" name="first-test-result" value="reactive"> Reactive</label></td>
+                              <td><label><input type="radio" id="first-test-result-non-reactive" name="first-test-result" value="non-reactive"> Nonreactive</label></td>
+                              <td colspan="2"><input type="text" id="first-test-titer" name="first-test-titer"></td>
 
                               
                             <td>20. What SURVEILLANCE stage of syphilis did mother have during pregnancy?</td>
                             <td colspan="4">
-                                <label><input type="radio" name="surveillance-stage" value="primary"> 1 primary</label>
-                                <label><input type="radio" name="surveillance-stage" value="secondary"> 2 secondary</label>
-                                <label><input type="radio" name="surveillance-stage" value="early-latent"> 3 early latent</label>
-                                <label><input type="radio" name="surveillance-stage" value="late-latent"> 4 late or late latent</label>
-                                <label><input type="radio" name="surveillance-stage" value="other"> 8 Other</label>
-                                <label><input type="radio" name="surveillance-stage" value="unknown"> 9 Unk</label>
+                                <label><input type="radio" id="surveillance-stage-primary" name="surveillance-stage[]" value="primary"> 1 primary</label>
+                                <label><input type="radio" id="surveillance-stage-secondary" name="surveillance-stage[]" value="secondary"> 2 secondary</label>
+                                <label><input type="radio" id="surveillance-stage-early-latent" name="surveillance-stage[]" value="early-latent"> 3 early latent</label>
+                                <label><input type="radio" id="surveillance-stage-late-latent" name="surveillance-stage[]" value="late-latent"> 4 late or late latent</label>
+                                <label><input type="radio" id="surveillance-stage-other" name="surveillance-stage[]" value="other"> 8 Other</label>
+                                <label><input type="radio" id="surveillance-stage-unknown" name="surveillance-stage[]" value="unknown"> 9 Unk</label>
                             </td>
                           </tr>
                           <tr>
@@ -196,16 +196,16 @@
                           <tr>
                               
                               <td colspan="2">a.</td>
-                              <td><input type="date" name="first-trep-test-date"></td>
-                              <td colspan="3"><input type="text" name="first-trep-test-type"></td>
-                              <td colspan="3"><input type="text" name="first-trep-test-result"></td>
+                              <td><input type="date" id="first-trep-test-date" name="first-trep-test-date"></td>
+                              <td colspan="3"><input type="text" id="first-trep-test-date" name="first-trep-test-type"></td>
+                              <td colspan="3"><input type="text" id="first-trep-test-result" name="first-trep-test-result"></td>
                           </tr>
                           <tr>
                               
                               <td colspan="2">b.</td>
-                              <td><input type="date" name="recent-trep-test-date"></td>
-                              <td colspan="3"><input type="text" name="recent-trep-test-type"></td>
-                              <td colspan="3"><input type="text" name="recent-trep-test-result"></td>
+                              <td><input type="date" id="recent-trep-test-date" name="recent-trep-test-date"></td>
+                              <td colspan="3"><input type="text" id="recent-trep-test-type" name="recent-trep-test-type"></td>
+                              <td colspan="3"><input type="text" id="recent-trep-test-result" name="recent-trep-test-result"></td>
                           </tr>
                           <tr>
                             
@@ -214,29 +214,29 @@
                             
                             <td colspan="3">21. When did mother receive her first dose of benzathine penicillin?
                             <input type="date" name="penicillin-date"><br>
-                                <label><input type="radio" name="penicillin-time" value="before-pregnancy"> 1 Before pregnancy</label>
-                                <label><input type="radio" name="penicillin-time" value="first-trimester"> 2 1st trimester</label>
-                                <label><input type="radio" name="penicillin-time" value="second-trimester"> 3 2nd trimester</label>
-                                <label><input type="radio" name="penicillin-time" value="third-trimester"> 4 3rd trimester</label>
-                                <label><input type="radio" name="penicillin-time" value="no-treatment"> 5 No Treatment (Go to Q24)</label>
-                                <label><input type="radio" name="penicillin-time" value="unknown"> 9 Unk</label>
+                                <label><input type="radio" id="penicillin-time-before-pregnancy" name="penicillin-time[]" value="before-pregnancy"> 1 Before pregnancy</label>
+                                <label><input type="radio" id="penicillin-time-first-trimester" name="penicillin-time[] value="first-trimester"> 2 1st trimester</label>
+                                <label><input type="radio" id="penicillin-time-second-trimester" name="penicillin-time[] value="second-trimester"> 3 2nd trimester</label>
+                                <label><input type="radio" id="penicillin-time-third-trimester" name="penicillin-time[] value="third-trimester"> 4 3rd trimester</label>
+                                <label><input type="radio" id="penicillin-time-no-treatment" name="penicillin-time[] value="no-treatment"> 5 No Treatment (Go to Q24)</label>
+                                <label><input type="radio" id="penicillin-time-unk" name="penicillin-time[] value="unknown"> 9 Unk</label>
                             </td>
                         
                             <td colspan="4">22. What was mother’s treatment?
                             <br>
-                                <label><input type="radio" name="treatment" value="2.4-units"> 1 2.4 M units benzathine penicillin</label>
-                                <label><input type="radio" name="treatment" value="4.8-units"> 2 4.8 M units benzathine penicillin</label>
-                                <label><input type="radio" name="treatment" value="7.2-units"> 3 7.2 M units benzathine penicillin</label>
-                                <label><input type="radio" name="treatment" value="other"> 8 Other</label>
-                                <label><input type="radio" name="treatment" value="unknown"> 9 Unk</label>
+                                <label><input type="radio" id="treatment-2.4-units" name="treatment[]" value="2.4-units"> 1 2.4 M units benzathine penicillin</label>
+                                <label><input type="radio" id="treatment-4.8-units" name="treatment[]" value="4.8-units"> 2 4.8 M units benzathine penicillin</label>
+                                <label><input type="radio" id="treatment-7.2-units" name="treatment[]" value="7.2-units"> 3 7.2 M units benzathine penicillin</label>
+                                <label><input type="radio" id="treatment-other" name="treatment[]" value="other"> 8 Other</label>
+                                <label><input type="radio" id="treatment-unknown" name="treatment[]" value="unknown"> 9 Unk</label>
                             </td>
                         
                             <td colspan="4">23. Did mother have an appropriate serologic response?
                             <br>
-                                <label><input type="radio" name="serologic-response" value="yes"> 1 Yes, appropriate response</label>
-                                <label><input type="radio" name="serologic-response" value="no"> 2 No, inappropriate response: evidence of treatment failure or reinfection</label>
-                                <label><input type="radio" name="serologic-response" value="response-unknown"> 3 Response could not be determined from available non-treponemal titer information</label>
-                                <label><input type="radio" name="serologic-response" value="not-enough-time"> 4 Not enough time for titer to change</label>
+                                <label><input type="radio" id="serologic-response-yes" name="serologic-response[]" value="yes"> 1 Yes, appropriate response</label>
+                                <label><input type="radio" id="serologic-response-no" name="serologic-response[]" value="no"> 2 No, inappropriate response: evidence of treatment failure or reinfection</label>
+                                <label><input type="radio" id="serologic-response-unknown" name="serologic-response[]" value="response-unknown"> 3 Response could not be determined from available non-treponemal titer information</label>
+                                <label><input type="radio" id="serologic-response-not-enough-time" name="serologic-response[]" value="not-enough-time"> 4 Not enough time for titer to change</label>
                             </td>
                         </tr>
                         <tr>
@@ -245,40 +245,40 @@
                         <tr>
                             
                             <td colspan="2">24. Date of Delivery<br/>
-                            <input type="text" name="date-of-delivery">  Unk</td>
+                            <input type="text" id="date-of-delivery-unk" name="date-of-delivery">  Unk</td>
 
                             <td colspan="4"> 25. Vital status
                             <br/>
-                                <label><input type="radio" name="vital-status" value="alive"> 1 Alive (Go to Q27)</label>
-                                <label><input type="radio" name="vital-status" value="stillborn"> 3 Stillborn (Go to Q26)</label>
-                                <label><input type="radio" name="vital-status" value="born-alive"> 2 Born alive, then died (Go to Q27)</label>
-                                <label><input type="radio" name="vital-status" value="unknown"> 9 Unknown (Go to Q27)</label>
+                                <label><input type="radio" id="vital-status-alive" name="vital-status[]" value="alive"> 1 Alive (Go to Q27)</label>
+                                <label><input type="radio" id="vital-status-stillborn" name="vital-status[]" value="stillborn"> 3 Stillborn (Go to Q26)</label>
+                                <label><input type="radio" id="vital-status-born-alive" name="vital-status[]" value="born-alive"> 2 Born alive, then died (Go to Q27)</label>
+                                <label><input type="radio" id="vital-status-unknown" name="vital-status[]" value="unknown"> 9 Unknown (Go to Q27)</label>
                             </td>
 
                             <td colspan="2">26. Indicate date of death<br/>
-                            <input type="text" name="date-of-death">  Unk</td>
+                            <input type="text" id="date-of-death" name="date-of-death">  Unk</td>
 
                             <td colspan="2">27. Birthweight (in grams)<br/>
-                            <input type="text" name="birthweight">  Unk</td>
+                            <input type="text" id="birthweight name="birthweight">  Unk</td>
                         </tr>
                         <tr>
                           
                             <td colspan="3">28. Estimated gestational age (in weeks)<br/>
-                            <input type="text" name="gestational-age">  Unk</td>
+                            <input type="text" id="gestational-age" name="gestational-age">  Unk</td>
 
                             <td colspan="3">29. a) Did infant/child have a reactive non-treponemal test for syphilis?
                               <br>
-                                  <label><input type="radio" name="reactive-non-treponemal-test" value="yes"> 1 Yes</label>
-                                  <label><input type="radio" name="reactive-non-treponemal-test" value="no"> 2 No</label>
-                                  <label><input type="radio" name="reactive-non-treponemal-test" value="no-test"> 3 No test</label>
-                                  <label><input type="radio" name="reactive-non-treponemal-test" value="unknown">  Unk</label>
+                                  <label><input type="radio" id="reactive-non-treponemal-test-yes" name="reactive-non-treponemal-test[]" value="yes"> 1 Yes</label>
+                                  <label><input type="radio" id="reactive-non-treponemal-test-no" name="reactive-non-treponemal-test[]" value="no"> 2 No</label>
+                                  <label><input type="radio" id="reactive-non-treponemal-test-no-test" name="reactive-non-treponemal-test[]" value="no-test"> 3 No test</label>
+                                  <label><input type="radio" id="reactive-non-treponemal-test-unk" name="reactive-non-treponemal-test[]" value="unknown">  Unk</label>
                               </td>
                               <td colspan="4">b) When was the infant/child’s first reactive treponemal test for syphilis?
                                 <br/>
-                                    <input type="text" name="first-reactive-treponemal-test-date">
-                                    <label><input type="radio" name="first-reactive-treponemal-test" value="positive"> 1 Positive</label>
-                                    <label><input type="radio" name="first-reactive-treponemal-test" value="negative"> 2 Negative</label>
-                                    <label><input type="radio" name="first-reactive-treponemal-test" value="unknown">  Unk</label>
+                                    <input type="text" id="first-reactive-treponemal-test-date" name="first-reactive-treponemal-test-date">
+                                    <label><input type="radio" id="first-reactive-treponemal-test-positive" name="first-reactive-treponemal-test" value="positive"> 1 Positive</label>
+                                    <label><input type="radio"id="first-reactive-treponemal-test-negative" name="first-reactive-treponemal-test" value="negative"> 2 Negative</label>
+                                    <label><input type="radio" id="first-reactive-treponemal-test-unknown" name="first-reactive-treponemal-test" value="unknown">  Unk</label>
                                 </td>
                         </tr>
                        
@@ -291,14 +291,14 @@
                                 <label><input type="radio" name="reactive-treponemal-test" value="unknown">  Unk</label>
                             </td>
                             <td colspan="3">b) When was the infant/child’s first reactive treponemal test for syphilis?
-                            <input type="text" name="first-reactive-treponemal-test-date">  Unk</td>
+                            <input type="text" id="first-reactive-treponemal-test-date" name="first-reactive-treponemal-test-date">  Unk</td>
 
                             <td colspan="4">31. Did infant/child have darkfield exam, PCR, or special stains?
                               <br>
-                                  <label><input type="radio" name="darkfield-exam" value="yes"> 1 Yes, positive</label>
-                                  <label><input type="radio" name="darkfield-exam" value="no"> 2 Yes, negative</label>
-                                  <label><input type="radio" name="darkfield-exam" value="no-test"> 3 No test</label>
-                                  <label><input type="radio" name="darkfield-exam" value="unknown"> 9 Unk</label>
+                                  <label><input type="radio" id="darkfield-exam-yes" name="darkfield-exam[]" value="yes"> 1 Yes, positive</label>
+                                  <label><input type="radio" id="darkfield-exam-no" name="darkfield-exam[]" value="no"> 2 Yes, negative</label>
+                                  <label><input type="radio" id="darkfield-exam-no-test" name="darkfield-exam[]" value="no-test"> 3 No test</label>
+                                  <label><input type="radio" id="darkfield-exam-unknown" name="darkfield-exam[]" value="unknown"> 9 Unk</label>
                               </td>
                         </tr>
                        
@@ -306,25 +306,25 @@
                           
                             <td colspan="10">32. Did the infant/child have any signs of CS?
                             <br/>
-                                <label><input type="radio" name="cs-signs" value="yes"> 1 Yes, hepatomegaly/jaundice</label>
-                                <label><input type="radio" name="cs-signs" value="no"> 2 No signs/asymptomatic</label>
-                                <label><input type="radio" name="cs-signs" value="other"> 3 Other</label>
+                                <label><input type="radio" id="cs-signs-yes" name="cs-signs[]" value="yes"> 1 Yes, hepatomegaly/jaundice</label>
+                                <label><input type="radio" id="cs-signs-no" name="cs-signs[]" value="no"> 2 No signs/asymptomatic</label>
+                                <label><input type="radio" id="cs-signs-other" name="cs-signs[]" value="other"> 3 Other</label>
                             </td>
                         </tr>
                         <tr>
                             
                             <td colspan="6">33. Did the infant/child have long bone X-rays?
                             <br>
-                                <label><input type="radio" name="long-bone-xray" value="yes"> 1 Yes, changes consistent with CS</label>
-                                <label><input type="radio" name="long-bone-xray" value="no"> 2 No changes</label>
-                                <label><input type="radio" name="long-bone-xray" value="no-xray"> 3 No X-rays</label>
+                                <label><input type="radio" id="long-bone-xray-yes" name="long-bone-xray[]" value="yes"> 1 Yes, changes consistent with CS</label>
+                                <label><input type="radio" id="long-bone-xray-no" name="long-bone-xray[]" value="no"> 2 No changes</label>
+                                <label><input type="radio" id="long-bone-xray-no-xray" name="long-bone-xray[]" value="no-xray"> 3 No X-rays</label>
                             </td>
 
                             <td colspan="4">34. Did the infant/child have a CSF-VDRL?
                               <br>
-                                  <label><input type="radio" name="csf-vdrl" value="yes-reactive"> 1 Yes, reactive</label>
-                                  <label><input type="radio" name="csf-vdrl" value="yes-nonreactive"> 2 Yes, nonreactive</label>
-                                  <label><input type="radio" name="csf-vdrl" value="no-test"> 3 No test</label>
+                                  <label><input type="radio" id="csf-vdrl-yes-reactive" name="csf-vdrl[]" value="yes-reactive"> 1 Yes, reactive</label>
+                                  <label><input type="radio" id="csf-vdrl-no-reactive" name="csf-vdrl[]" value="yes-nonreactive"> 2 Yes, nonreactive</label>
+                                  <label><input type="radio" id="csf-vdrl-no-test" name="csf-vdrl[]" value="no-test"> 3 No test</label>
                               </td>
                         </tr>
 
@@ -343,11 +343,11 @@
                           
                           <td colspan="10">Was the infant/child treated?
                           <br/>
-                              <label><input type="radio" name="treated" value="yes-penicillin"> 1 Yes, with aqueous/procaine penicillin for 10 days</label>
-                              <label><input type="radio" name="treated" value="yes-benzathine"> 3 Yes, with benzathine penicillin x1</label>
-                              <label><input type="radio" name="treated" value="other"> 4 Other treatment</label>
-                              <label><input type="radio" name="treated" value="no-treatment"> 5 No treatment</label>
-                              <label><input type="radio" name="treated" value="unknown"> 9 Unk</label>
+                              <label><input type="radio" id="yes-penicillin" name="treated[]" value="yes-penicillin"> 1 Yes, with aqueous/procaine penicillin for 10 days</label>
+                              <label><input type="radio" id="yes-benzathine" name="treated[]" value="yes-benzathine"> 3 Yes, with benzathine penicillin x1</label>
+                              <label><input type="radio" id="other-treatment" name="treated[]" value="other"> 4 Other treatment</label>
+                              <label><input type="radio" id="no-treatment" name="treated[]" value="no-treatment"> 5 No treatment</label>
+                              <label><input type="radio" id="treated-unk" name="treated[]" value="unknown"> 9 Unk</label>
                           </td>
                       </tr>
                       <tr>
@@ -357,10 +357,10 @@
                         
                           <td colspan="10"> 37.Classification
                           <br/>
-                              <label><input type="radio" name="classification" value="not-a-case"> 1 Not a case</label>
-                              <label><input type="radio" name="classification" value="confirmed-case"> 2 Confirmed case</label>
-                              <label><input type="radio" name="classification" value="syphilitic-stillbirth"> 3 Syphilitic stillbirth</label>
-                              <label><input type="radio" name="classification" value="probable-case"> 4 Probable case</label>
+                              <label><input type="radio" id="classification-not-a-case" name="classification[]" value="not-a-case"> 1 Not a case</label>
+                              <label><input type="radio" id="classification-confirmed-case" name="classification[]" value="confirmed-case"> 2 Confirmed case</label>
+                              <label><input type="radio" id="classification-syphilitic-stillbirth" name="classification[]" value="syphilitic-stillbirth"> 3 Syphilitic stillbirth</label>
+                              <label><input type="radio" id="classification-problem-case" name="classification[]" value="probable-case"> 4 Probable case</label>
                           </td>
                       </tr>
                         </table>

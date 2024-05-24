@@ -79,14 +79,14 @@ body {
     box-shadow: lightblue;
 }
   
-  /* Navigation styles 
+  /* Navigation styles */
   .navbar {
     position: relative;
     top: auto;
     left: 0;
     right: 0; 
     height: 120px;
-    color:  */
+    color:  
 }
 
 .navbar ul {
@@ -198,7 +198,7 @@ section {
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 50vw;
+    width: 800px;
     height: auto;
 }
 
