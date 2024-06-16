@@ -8,6 +8,12 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CDC Forms</title>
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <script src="../../scripts/validateclinicalinfo.js"></script>
+        <style>
+          span {
+            color: red;
+          }
+        </style>
     </head>
     <body>
         <header class="header row">
@@ -41,22 +47,22 @@
                 <article>
                     <div class="form-container">
                         <h2 class="case_report_head">STI Case Reporting Form for Chlamydia and Gonorrhea</h2>
-                        <form action="#" method="post" autocomplete="off" class="clinic-form">
+                        <form method="post" name="clinicalinfo" onsubmit="return validateclinicalinfo();" autocomplete="off" class="clinic-form">
                           <table>
                               <tr>
                                   <th colspan="4"> Clinic Information </th>
                               </tr>
                               <tr>
-                                  <td>Date:</td>
-                                  <td><input type="date" id="clinic-date" name="date"></td>
-                                  <td>Person Completing Form:</td>
-                                  <td><input type="text id="person-completing" name="person-completing"></td>
+                                  <td><label for="clinicdate">Date:</label></td>
+                                  <td><input type="text" id="clinicdate" name="clinicdate" placeholder="dd/mm/yyyy" onblur="return validatecdate();"/><span id="clinicdateErr"></span></td>
+                                  <td><label for="personcompletingf">Person Completing Form:</label></td>
+                                  <td><input type="text" id="personcompletingf" name="personcompletingf" onblur="return validatepcf();"><span id="personcompletingfErr"></span></td>
                               </tr>
                               <tr>
-                                  <td>Health Provider:</td>
-                                  <td><input type="text" id="health-provider" name="health-provider"></td>
-                                  <td>Contact phone number/fax:</td>
-                                  <td><input type="text" id="contact-phone" name="contact-phone"></td>
+                                  <td><label for="healthprovider">Health Provider:</label></td>
+                                  <td><input type="text" id="healthprovider" name="healthprovider" onblur="return validatehp();"><span id="healthproviderErr"></span></td>
+                                  <td><label for="contactphone">Contact phone number/fax:</label></td>
+                                  <td><input type="text" id="contactphone" name="contactphone" onblur="return validatecp();"><span id="contactphoneErr"></span></td>
                               </tr>
                           </table>
                             <table>
@@ -76,15 +82,16 @@
                             </tr>
                                 <tr>
                                   <td>1</td>
-                                    <td>Name:</td>
-                                    <td colspan="3"><input type="text" id="patient-name" name="name"></td>
-                                    <td>Date of Birth:</td>
-                                    <td colspan="2"><input type="date" id="patient-dob" name="dob"></td>
+                                    <td><label for="patient-name">Name:</label></td>
+                                    <td colspan="3"><input type="text" id="patient-name" name="name" onblur="return validatepn();"/><span id="patient-nameErr"></span></td>
+                                    <td><label for="patient-dob">Date of Birth:</label></td>
+                                    <td colspan="2"><input type="text" id="patient-dob" name="dob" placeholder="dd/mm/yyyy"/><span id="patient-dobErr"></span></td>
                                     <td>Gender:</td>
                                     <td>
-                                        <label><input type="radio" id="gender-male" name="gender[]" value="male"> Male</label>
+                                        <label><input type="radio" id="gender-male" name="gender[]" value="male"/> Male</label>
                                         <label><input type="radio" id="gender-female" name="gender[]" value="female"> Female</label>
                                         <label><input type="radio" id="gender-other" name="gender[]" value="other"> Other</label>
+                                        <span id="genderErr"></span>
                                     </td>
                                 </tr>
                                 <tr>
@@ -119,6 +126,7 @@
                                       <label><input type="radio" id="ethnicity-non-hispanic" name="ethnicity[]" value="non-hispanic"> Non-Hispanic</label>
                                       <br/>
                                       <label><input type="radio" id="ethnicity-unk" name="ethnicity[]" value="unknown"> Unknown</label><br/>
+                                      <span id="ethnicityErr"></span>
                                   </td>
                                   <td>Race:</td>
                                   <td colspan="2">
@@ -130,6 +138,7 @@
                                       <label><input type="radio" id="race-pacific-islander name="race[]" value="pacific-islander"> Pacific Islander</label><br>
                                       <label><input type="radio" id="race-unk" name="race[]" value="unknown"> Unknown</label><br>
                                       <label>Other: <input type="text" id="race-other" name="race-other"></label>
+                                      <span id="raceErr"></span>
                                   </td>
                                   <td>Gender of Sex Partner(s):</td>
                                   <td colspan="3">
@@ -137,6 +146,7 @@
                                       <label><input type="radio" id="partner-gender-female" name="partner-gender" value="female"> Female</label><br>
                                       <label><input type="radio"id="partner-gender-both" name="partner-gender" value="both"> Both</label><br>
                                       <label><input type="radio" id="partner-gender-unk" name="partner-gender" value="unknown"> Unknown</label><br>
+                                      <span id="partner-genderErr"></span>
                                   </td>
                               </tr>
                               <tr>
@@ -144,12 +154,13 @@
                                 <td>Test Result Type:</td>
                                 <td colspan="2">
                                     <label><input type="checkbox" id="test-result-chlamydia" name="test-result" value="chlamydia"> Chlamydia Positive Result</label>
-                                    <label>Date: <input type="date" id="chlamydia-date" name="chlamydia-date"></label>
+                                    <label>Date: <input type="text" id="chlamydia-date" name="chlamydia-date"></label>
                                 </td>
                                 <td colspan="2">
                                     <label><input type="checkbox" id="test-result-gonorrhea" name="test-result" value="gonorrhea"> Gonorrhea Positive Result</label>
-                                    <label>Date: <input type="date" id="gonorrhea-date name="gonorrhea-date"></label>
+                                    <label>Date: <input type="text" id="gonorrhea-date name="gonorrhea-date"></label>
                                 </td>
+                                <span id="test-resultErr"></span>
                                 <td colspan="4">
                                   <label for="previous_hiv_testing">PREVIOUS HIV TESTING:</label>
                                                 <input type="checkbox" id="hiv_testing-yes" name="hiv_testing[]" value="Yes"> Yes
@@ -174,6 +185,7 @@
                                   <label><input type="checkbox" id="exam-reason-test-for-cure" name="exam-reason[]" value="test-for-cure"> Test for Cure</label>
                                   <label><input type="checkbox" id="exam-reason-exposed-to-infection" name="exam-reason[]" value="exposed-to-infection"> Exposed to Infection</label>
                                   <label><input type="checkbox" id="exam-reason-pregnant" name="exam-reason[]" value="pregnant"> Pregnant</label>
+                                  <span id="exam-reasonErr"></span>
                               </td>
                               <td>Diagnosis:</td>
                               <td colspan="3">
@@ -182,6 +194,7 @@
                                   <label><input type="checkbox" id="diagnosis-pelvic-inflammatory" name="diagnosis[]" value="pid"> Pelvic Inflammatory Disease (PID)</label>
                                   <label><input type="checkbox" id="diagnosis-ophthalmia" name="diagnosis[]" value="ophthalmia"> Ophthalmia/conjunctivitis</label>
                                   <label><input type="checkbox" id="diagnosis-disseminated" name="diagnosis[]" value="disseminated"> Disseminated</label>
+                                  <span id="diagnosisErr"></span>
                               </td>
                               <td>Site(s):</td>
                               <td colspan="2">
@@ -192,6 +205,7 @@
                                   <label><input type="checkbox" id="sites-ocular" name="sites[]" value="ocular"> Ocular</label>
                                   <label><input type="checkbox" id="sitespharynx" name="sites[]" value="pharynx"> Pharynx</label>
                                   <label><input type="checkbox" id="sites-other" name="sites[]" value="other"> Other</label>
+                                  <span id="sitesErr"></span>
                               </td>
                               <tr>
                                 <tr>
@@ -254,7 +268,6 @@
                                   <p>Current Recommended Treatment - See CDC Guidelines at: <a href="http://www.cdc.gov/std/treatment/">www.cdc.gov/std/treatment/</a></p>
                               </td>
                           </tr>
-        
                             </table> 
                             <div>
                               <button type="submit" value="save and exit" class="login-button">Save and Exit</button>
@@ -268,6 +281,6 @@
         <div class="footer">
           <footer>&copy CDC Forms. All Rights Reserved.</footer>
       </div>
-
+      
     </body>
 </html>
