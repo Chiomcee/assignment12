@@ -15,10 +15,14 @@ try {
         let diagnosis = document.forms.clinicalinfo.diagnosis.value;
         let sites = document.forms.clinicalinfo.sites.value;
 
+        // input forms  validation
         if(!clinicdate){
             document.getElementById('clinicdateErr').innerHTML = "<br/>Clinic date is required";
             document.forms.clinicalinfo.clinicdate.focus();
             return false;
+        }
+        else {
+            document.getElementById('clinicdateErr').innerHTML = ""; // clears error message
         }
 
         if(!personcompletingf){
@@ -26,11 +30,17 @@ try {
             document.forms.clinicalinfo.personcompletingf.focus();
             return false;
         }
+        else {
+            document.getElementById('personcompletingfErr').innerHTML = "";
+        }
 
         if(!healthprovider){
             document.getElementById('healthproviderErr').innerHTML = "Health provider is required";
             document.forms.clinicalinfo.healthprovider.focus();
             return false;
+        }
+        else {
+            document.getElementById('healthproviderErr').innerHTML = "";
         }
 
         if(!contactphone){
@@ -38,11 +48,17 @@ try {
             document.forms.clinicalinfo.contactphone.focus();
             return false;
         }
+        else {
+            document.getElementById('contactphoneErr').innerHTML = "";
+        }
 
         if(!name){
             document.getElementById('patient-nameErr').innerHTML = "<br/>Patient name is required";
             document.forms.clinicalinfo.name.focus();
             return false;
+        }
+        else {
+            document.getElementById('patient-nameErr').innerHTML = "";
         }
 
         if(!dob){
@@ -50,11 +66,17 @@ try {
             document.forms.clinicalinfo.dob.focus();
             return false;
         }
+        else {
+            document.getElementById('patient-dobErr').innerHTML = "";
+        }
 
         if(!gender){
             document.getElementById('genderErr').innerHTML = "<br/>Gender is required";
             document.forms.clinicalinfo.gender.focus();
             return false;
+        }
+        else {
+            document.getElementById('genderErr').innerHTML = "";
         }
 
         if(!ethnicity){
@@ -62,11 +84,17 @@ try {
             document.forms.clinicalinfo.ethnicity.focus();
             return false;
         }
+        else {
+            document.getElementById('ethnicityErr').innerHTML = "";
+        }
 
         if(!race){
             document.getElementById('raceErr').innerHTML = "<br/>Race is required";
             document.forms.clinicalinfo.race.focus();
             return false;
+        }
+        else {
+            document.getElementById('raceErr').innerHTML = "";
         }
 
         if(!partnergender){
@@ -74,11 +102,17 @@ try {
             document.forms.clinicalinfo.partner-gender.focus();
             return false;
         }
+        else {
+            document.getElementById('partner-genderErr').innerHTML = "";
+        }
 
         if(!testresult){
             document.getElementById('test-resultErr').innerHTML = "<br/>Test result is required";
             document.forms.clinicalinfo.test-result.focus();
             return false;
+        }
+        else {
+            document.getElementById('test-resultErr').innerHTML = "";
         }
 
         if(!examreason){
@@ -86,17 +120,26 @@ try {
             document.forms.clinicalinfo.exam-reason.focus();
             return false;
         }
+        else {
+            document.getElementById('exam-reasonErr').innerHTML = "";
+        }
 
         if(!diagnosis){
             document.getElementById('diagnosisErr').innerHTML = "<br/>Diagnosis is required";
             document.forms.clinicalinfo.diagnosis.focus();
             return false;
         }
+        else {
+            document.getElementById('diagnosisErr').innerHTML = "";
+        }
 
         if(!sites){
             document.getElementById('sitesErr').innerHTML = "<br/>Sites is required";
             document.forms.clinicalinfo.sites.focus();
             return false;
+        }
+        else {
+            document.getElementById('sitesErr').innerHTML = "";
         }
     }
     function validatecdate() {
@@ -136,9 +179,11 @@ try {
     
 
     function validatepn() {
+        //Regular Expression for name
         let namepattern = /^[A-Za-z\s]*$/;
         let name = document.forms.clinicalinfo.name.value;
         if(name) {
+            // check if the name matches the pattern
             let x = namepattern.test(name);
             if(x==false) {
                 document.getElementById('patient-nameErr').innerHTML = "<br/> Patient name should only contain letters and whitespace";
