@@ -157,7 +157,7 @@ try {
                 document.forms.clinicalinfo.clinicdate.focus();
             } else {
                 // Additional leap year validation (check if February has 29 days in leap years)
-                let [day, month, year] = clinicDate.split('/');
+                let [day, month, year] = clinicdate.split('/');
                 day = parseInt(day, 10);
                 month = parseInt(month, 10);
                 year = parseInt(year, 10);
