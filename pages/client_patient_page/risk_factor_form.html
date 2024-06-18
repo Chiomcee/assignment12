@@ -8,6 +8,24 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CDC Forms</title>
         <link rel="stylesheet" type="text/css" href="../../css/style.css">
+        <style>
+          #cont1, #cont2 {
+            float:left;
+            width: 350px;
+            height: 300px;
+            margin: 20px 50px;
+            border: 1px solid #1a76d8;
+          }
+
+          #dragitem1, #dragitem2, #dragitem3, #dragitem4, #dragitem5, #dragitem6, #dragitem7 {
+            background-color: #1a76d8;
+            height: 20px;
+            width: 200px;
+            border: 2px solid rgba(7, 179, 7, 0.7);
+            margin: 5px;
+            color: white;
+          }
+        </style>
     </head>
     <body>
       <header class="header">
@@ -35,7 +53,25 @@
             </ul>
           </div>
         </div>
+        <div>
+          <h2 style="text-align: center; color: white;"><i>In the last 12 months drag the options that apply</i></h2>
+        <div class="col-4" id="cont1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          <div id="dragitem1" draggable="true" ondragstart="drag(event)"><em>Had sex with males</em></div>
+          <div id="dragitem2" draggable="true" ondragstart="drag(event)"><em>Had Sex with Females</em></div>
+          <div id="dragitem3" draggable="true" ondragstart="drag(event)"><em>Victim sexual assult</em></div>
+          <div id="dragitem4" draggable="true" ondragstart="drag(event)"><em>Homeless</em></div>
+          <div id="dragitem5" draggable="true" ondragstart="drag(event)"><em>Incarcerated</em></div>
+          <div id="dragitem6" draggable="true" ondragstart="drag(event)"><em>Possible Exposure</em></div>
+          <div id="dragitem7" draggable="true" ondragstart="drag(event)"><em>Routine Screening</em></div>
+        </div>
+        <div class="col-4" id="cont1" ondrop="drop(event)" ondragover="allowDrop(event)">
+          
+        </div>
+        </div>
+
+
         
+        <!--
         <div class="col-9">
             <article>
                 <div class="form-container">
@@ -63,190 +99,11 @@
                       </form>
                   </div>
                 </article>
-            </div>
+            </div> -->
         </section>
         <div class="footer">
           <footer>&copy CDC Forms. All Rights Reserved.</footer>
       </div>
+      <script src="../../scripts/drag.js"></script> 
 </body>
-</html>
-
-  <!--
-    <head>
-  Describe the character set for the web page
-<meta charset="utf-8">
-<!---keywords for the search engine-
-<meta name="keywords" content="HTML 5 CSS 3 JAVASCRIPT">
-<!--Description for the web page
-<meta name="description" content="Dynamic Web Development">
-<!--Author of the page-
-<meta name="author" content="Anagha">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
-<link rel="stylesheet" href="../../font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="../../css/style.css">
-
-<!---Defines the title for the page-
-<title> Chlamydia & Gonorrhea case reporting form</title>
-<style>
-  span{
-    color:red;
-  }
-</style>
-</head>
-
-<body>
-  <header>
-      <h2> Chlamydia & Gonorrhea case reporting form</h2>
-  </header>
-
-  <section class="row">
-    <nav class="col-12" >
-      <ul class="topnav">
-        <li><a href="user_account.html">Home</a></li>
-        <li><a href="../home.html">Log Out</a></li>
-      </ul>
-    </nav>
-  </section>
-
-  <section class="row">
-    <nav class="col-4">
-        <ul class="sidenav">
-          <li><a href="user_account.html" >Account</a></li>
-          <li><a href="risk_factor_info.html" >Risk Factor Information</a></li>
-          <li><a href="hepatitisB_preg_women_report.html" >Hepatitis B Pregnent Women Reporting Form</a></li>
-          <li><a href="congenital_syphilis.html">Congenital Syphilis Form</a></li>
-          <li><a href="cng_case_report.html">Chlamydia & Gonorrhea case reporting form</a></li>
-        </ul>
-    </nav>
-    <article class="col-8">
-        <form  method="post" id="register" name="personalinfo" onsubmit="return validatepersonalinfo();"  autocomplete="off">
-          
-          <fieldset>
-            <legend>Clinic Information</legend>
-            
-            <label for="date">Date</label>
-            <input type="date" name="date" id="date"><span id="dateerr"></span><br>
-            
-            <label for="staffname">Person Completing Name</label>
-            <input type="text" name="staffname" id="staffname"><span id="staffnameerr"></span><br>
-            
-            <label for="healthprovider">Health Provider</label>
-            <input type="text" name="healthprovider" id="healthprovider"><span id="healthprovidererr"></span><br>
-            
-            <label for="phone">Enter your phone number:</label>
-            <input type="tel" id="phone" name="phone" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><span id="phoneerr"></span><br>
-          </fieldset>
-          
-          <fieldset id="pinfo"> 
-              <legend>Patient's Information</legend> 
-          
-              <label for="fullname">Fullname : </label>
-              <input type="text" name="fullname" id="fullname" placeholder="Firstname Middlename Lastname" size="50"><span id="fullnameerr"></span><br>
-          
-              <label for="dob">Date of Birth:</label>
-              <input type="date" name="dob" id="dob"><span id="doberr"></span><br><br>
-          
-              <label for="address">Home Address:</label>
-              <textarea name="address" id="address" cols="30" rows="5">Home Address</textarea><br>
-          
-              <label for="sex">Gender:</label> <span id="sexerr"></span>
-              <input type="radio" name="sex" value="Male">Male
-              <input type="radio" name="sex" value="Female">Female
-              <input type="radio" name="sex" value="Other">Other<br>
-          
-              <label for="phone">Enter your phone number:</label>
-              <input type="tel" id="phone" name="phone" placeholder="123-45-678" pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"><br>
-          
-              <label for="result">Pregnency Test Result:</label>
-              <input type="radio" name="result" value="N/A">N/A
-              <input type="radio" name="result" value="Positive">Positive
-              <input type="radio" name="result" value="Negative">Negative
-              <input type="radio" name="result" value="Unknown">Unknown<br>
-          
-              <label for="weeks">If positive, How many weeks :</label>
-              <input type="number" id="weeks" name="weeks"><br>
-          
-              <label for="ethanicy">Ethnicity:</label><span id="ethnicityerr"></span>
-              <input type="radio" name="ethnicity" value="Hispanic">Hispanic
-              <input type="radio" name="ethnicity" value="Non-Hispanic">Non-Hispanic
-              <input type="radio" name="ethnicity" value="Unknown">Unknown<br>
-          
-              <label for="Race">Race:</label><span id="raceerr"></span>
-              <input type="radio" name="Race" value="White">White
-              <input type="radio" name="Race" value="Black">Black
-              <input type="radio" name="Race" value="Asian">Asian
-              <input type="radio" name="Race" value="American Indian">American Indian
-              <input type="radio" name="Race" value="Alaskan">Alaskan
-              <input type="radio" name="Race" value="Pacific Islander">Pacific Islander
-              <input type="radio" name="Race" value="Unknown">Unknown
-              <input type="radio" name="Race" value="Other">Other    <br>
-            
-              <label for="partners">Gender of Sex Partners:</label><span id="partnerserr"></span>
-              <input type="radio" name="partners" value="Male">Male
-              <input type="radio" name="partners" value="Female">Female
-              <input type="radio" name="partners" value="Both">Both
-              <input type="radio" name="partners" value="Unknown">Unknown<br>
-
-              <label for="testtype">Test Result Type: </label><br>
-              <input type="radio" name="ctesttype" value="Chlamydia Positive Result">Chlamydia Positive Result <br>
-              <label for="date">Date</label>
-              <input type="date" name="date" id="date"><br>
-
-              <input type="radio" name="gtesttype" value="Gonorrhea Positive Result">Gonorrhea Positive Result <br>
-              <label for="date">Date</label>
-              <input type="date" name="date" id="date" ><span id="gtesttypeerr"></span><br>
-
-              <label for="reason">Reason for Exam:</label><span id="reasonerr"></span><br>
-              <input type="radio" name="reason" value="symptomatic">Symptomatic <br>
-              <input type="radio" name="reason" value="routine">Routine <br>
-              <input type="radio" name="reason" value="test for cure">Test for Cure <br>
-              <input type="radio" name="reason" value="exposed to infection">Exposed to Infection <br>
-              <input type="radio" name=" reason" value="pregnency">Pregnency <br><br>
-
-              <label for="diagnosis">DIAGNOSIS:</label><span id="diagnosiserr"></span><br>
-              <input type="radio" name="diagnosis" value="asymptomatic">Asymptomatic <br>
-              <input type="radio" name="diagnosis" value="symptomaticuncomplicated">Symptomatic-Uncomplicated <br>
-              <input type="radio" name="diagnosis" value="pid">Pelvic Inflammatory Disease(PID) <br>
-              <input type="radio" name="diagnosis" value="opthalmiaconjunctivitis">Opthalmia/Conjunctivitis <br>
-              <input type="radio" name="diagnosis" value="disseminated">Disseminated <br><br>
-
-              <label for="sites">SITE(S)</label><span id="siteserr"></span>
-              <input type="radio" name="sites" value="cervix">Cervix  
-              <input type="radio" name="sites" value="vaginal">Vaginal 
-              <input type="radio" name="sites" value="urethra">Urethra 
-              <input type="radio" name="sites" value="rectum">Rectum 
-              <input type="radio" name="sites" value="ocular">Ocular 
-              <input type="radio" name="sites" value="urine">Urine 
-              <input type="radio" name="sites" value="pharynx">Pharynx 
-              <input type="radio" name="sites" value="other">Other: <br><br>
-
-              <label for="gtplan">GONORRHEA TREATMENT PLAN</label><br>
-              <input type="checkbox" name="gtplan" value="rocephin">Rocephin/Ceftriaxone 250mg 1M X 1. 
-              <input type="date" name="date" id="date"><br>
-              <input type="checkbox" name="gtplan" value="azithromycin">Azithromycin 1gm orally in a single dose <br>
-
-              <label for="agtplan">ALTERNATE TREATMENT REGIMENS</label><br>
-              <input type="checkbox" name="agtplan" value="cefixime">Cefixim 400mg orally in a single dose.
-              <input type="date" name="date" id="date"><br>
-              <input type="checkbox" name="agtplan" value="azithromycin">Azithromycin 1gm orally in a single dose <br><br>
-
-              <label for="ctplan">CHLAMYDIA TREATMENT PLAN</label><br>
-              <input type="radio" name="ctplan" value="doxycycline">doxycycline 100mg BID X 7 days. 
-              <input type="date" name="date" id="date"><br>
-              <input type="radio" name="ctplan" value="azithromycin">Azithromycin 1gm orally in a single dose 
-              <input type="date" name="date" id="date"><br>
-
-              <label for="actplan">ALTERNATE TREATMENT REGIMENS</label><br>              
-              <input type="checkbox" name="actplan" value="azithromycin">Azithromycin 1gm orally in a single dose 
-              <input type="date" name="date" id="date"><br><br>
-
-              <input type="submit" name="submit" value="SAVE"><br><br>
-
-          </fieldset>
-        </form>
-      </article>
-    </section>
-    <script src="../script/validatepersonalinfo.js"></script>
-    <script src="../script/localstorage.js"></script>
-  </body> -->
 </html>
