@@ -8,6 +8,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>CDC Forms</title>
         <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <style>
+        .displays {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+        </style>
     </head>
     <body>
         <header class="header">
@@ -71,6 +79,7 @@
                             </div>
                             <input type="submit" name="submit" value="Submit" class="login-button">
                         </form>
+                         <div class="displays" id="displays"></div>
                     </div>
                 </article>
             </div>
@@ -78,6 +87,21 @@
         <div class="footer">
             <footer>&copy CDC Forms. All Rights Reserved.</footer>
         </div>
+        <script>
+            document.getElementById('registration-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const formData = new FormData(event.target);
+                const formEntries = new Map(formData.entries());
+                const displaysDiv = document.getElementById('displays');
+                displaysDiv.innerHTML = '';
+    
+                for (const [key, value] of formEntries) {
+                    const p = document.createElement('p');
+                    p.textContent = `${key}: ${value}`;
+                    displaysDiv.appendChild(p);
+                }
+            });
+        </script>
 
     </body>
 </html>
